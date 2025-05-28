@@ -1,7 +1,7 @@
 // src/components/Watchlist/MyWatchlist.jsx
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
-import { auth, db } from "../../../firebase/firebase";
+import { auth, db } from "../../firebase/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import axios from "axios";
 import CryptoChart from "./CryptoChart";
