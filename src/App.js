@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.jsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./components/Auth/Login";
+import Signup from "./components/Auth/Signup";
+import MyWatchlist from "./components/Watchlist/MyWatchlist";
+import Navbar from "./components/Common/Navbar"; // Create a simple Navbar
+import Donate from "./components/Payment/Donate";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar /> {/* Add a navbar for navigation */}
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/dashboard" element={<MyWatchlist />} />
+        <Route path="/donate" element={<Donate />} />
+        <Route path="/" element={<Login />} /> {/* Default route */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
